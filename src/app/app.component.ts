@@ -28,7 +28,7 @@ export class AppComponent {
             this.displayList = this.sourceList.slice(0);
           }.bind(this));
        }.bind(this));
- };
+ }
 
  search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
@@ -39,8 +39,9 @@ export class AppComponent {
         matchingSatellites.push(this.sourceList[i]);
      }
   }
+
   this.displayList = matchingSatellites;
-};
+}
 
   title = 'my-project-name';
 };
