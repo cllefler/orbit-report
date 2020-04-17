@@ -18,17 +18,17 @@ export class AppComponent {
        response.json().then(function(data) {
  
           let fetchedSatellites = data.satellites;
-          for (let i=0; fetchedSatellites.length; i++){
+          for (let i=0; i < fetchedSatellites.length; i++){
             let satelliteObject = new Satellite(
               fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, 
               fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
               this.sourceList.push(satelliteObject);
             }
+
             this.displayList = this.sourceList.slice(0);
           }.bind(this));
        }.bind(this));
- 
- }
+ };
 
  search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
@@ -40,7 +40,7 @@ export class AppComponent {
      }
   }
   this.displayList = matchingSatellites;
-}
+};
 
   title = 'my-project-name';
-}
+};
